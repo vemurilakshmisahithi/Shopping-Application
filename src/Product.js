@@ -42,6 +42,7 @@ const Product = ({ products }) => {
                                             </div>
                                         )}
                                         <div>
+                                             <p className='product-titleheading'>{product.title}</p>
                                             <p className='product-category'>{product.category}</p>
                                             <h1 className='product-discount'>{product.discountPercentage} OFF </h1>
                                             <p className='product-shop'>Shop Now</p>

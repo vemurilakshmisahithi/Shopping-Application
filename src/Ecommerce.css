@@ -386,13 +386,19 @@
     width: 180px;
     height: 200px;
 }
-
+.product-titleheading{
+    font-size: 15px;
+    font-weight: 600;
+    color: #007bff;
+    text-align: center;
+    margin: 30px 0 5px 10px;
+}
 .product-category {
     font-size: 15px;
     font-weight: 600;
     color: #007bff;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .product-discount {

@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import './Ecommerce.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import Headers from './Headers';
+import Footer from './Footer';
 
 
 const Cart = () => {
@@ -64,7 +66,8 @@ const Cart = () => {
     };
 
     return (
-        <div>
+        <div className='nav-headerstyle'>
+            <Headers />
             <h2 className='cart-header'>Shopping Cart</h2>
             {cart.length === 0 ? (
                 <p><img src='./assets/icons/Empty cart.webp' alt='empty cart' className='empty-cart'/></p>
@@ -111,6 +114,7 @@ const Cart = () => {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }
