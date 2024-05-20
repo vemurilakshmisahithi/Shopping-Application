@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ProductList from './ProductList';
 import Header from './Header';
 import Footer from './Footer';
+import Headers from './Headers';
 
 const ProductDetailPage = () => {
     const { productId } = useParams();
@@ -28,8 +29,8 @@ const ProductDetailPage = () => {
 
     return (
         <div>
-            <Header />
-            <div style={{ paddingTop: "100px" }}>
+            <Headers />
+            <div className='nav-headerstyle'>
                 {product && <ProductList product={product} addToCart={addToCart} />}
             </div>
             <Footer />

@@ -7,7 +7,7 @@ import './Ecommerce.css';
 import AccountMenu from './AccountMenu';
 import Product from './Product';
 
-const Header = () => {
+const Headers = () => {
     const isSmallScreen = useMediaQuery('(min-width: 991px)'); 
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -86,11 +86,9 @@ const Header = () => {
                     </ul>
                 </div>
             </header>
-            <section className='section-container'>
-        <Product products={filteredProducts}/>
-      </section>
+           
         </div>
     );
 }
 
-export default Header;
+export default Headers;

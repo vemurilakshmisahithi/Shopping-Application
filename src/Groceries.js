@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import './Ecommerce.css';
-import Header from './Header';
 import Footer from './Footer';
 import {
     HandleAddProduct,
@@ -12,6 +11,7 @@ import {
     handleDrop,
     handleDragOver
 } from './ProductFunctions';
+import Headers from './Headers';
 
 function Groceries() {
     const [products, setProducts] = useState([]);
@@ -56,12 +56,12 @@ function Groceries() {
 
     return (
         <div>
-            <Header />
-            <div style={{ marginTop: "100px" }}>
+            <Headers />
+            <div className='nav-headerstyle'>
                 <h1 className='product-title'>Products</h1>
                 {showForm ? (
                     <div>
-                        <h2 style={{ margin: "30px" }}>{isEditing ? 'Update Product' : 'Add New Product'}</h2>
+                        <h2 className={isEditing?'update-product':'add-products'}>{isEditing ? 'Update Product' : 'Add New Product'}</h2>
                         <form className='form-container'>
                             <input
                                 type="text"
@@ -136,7 +136,7 @@ function Groceries() {
                     </div>
                 )}
                 <div style={{ margin: "15px" }} >
-                    <button onClick={toggleForm} className='product-add'>{showForm ? 'Cancel' : 'Add Product'}</button>
+                    <button onClick={toggleForm} className={showForm ?'product-cancel ':'product-add'}>{showForm ? 'Cancel' : 'Add Product'}</button>
                 </div>
             </div>
             <Footer />

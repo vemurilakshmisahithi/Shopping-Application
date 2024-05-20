@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import './Ecommerce.css';
-import Header from './Header';
+
 import Footer from './Footer';
 import {
     HandleAddProduct,
@@ -12,6 +12,7 @@ import {
     handleDrop,
     handleDragOver
 } from './ProductFunctions';
+import Headers from './Headers';
 
 function HomeAccessories() {
     const [products, setProducts] = useState([]);
@@ -60,8 +61,8 @@ function HomeAccessories() {
 
     return (
         <div>
-            <Header />
-            <div style={{ marginTop: "150px" }}>
+            <Headers />
+            <div className='nav-headerstyle'>
                 <h1 className='product-title'>Products</h1>
                 {showForm ? (
                     <div>

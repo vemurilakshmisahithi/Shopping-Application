@@ -336,11 +336,12 @@
 
 .section-container{
     padding-top: 200px;
-    
+    min-height: 100vh;
 }
-
-
-
+.nav-headerstyle{
+    margin-top: 150px;
+    min-height: 100vh;
+}
 .product-title {
     margin-left: 30px;
     color:#3272a9;

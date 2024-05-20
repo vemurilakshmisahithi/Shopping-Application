@@ -4,26 +4,20 @@ import Box from '@mui/material/Box';
 import './Ecommerce.css';
 import ProductList from './ProductList';
 import { Link } from 'react-router-dom';
+import { Shimmer } from 'react-shimmer';
 
 const Product = ({ products }) => {
-    const [productsList, setProductsList] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Failed to fetch products');
-                }
-                return res.json();
-            })
-            .then(data => setProductsList(data.products))
-            .catch(error => setError(error.message));
-    }, []);
+        setFilteredProducts(products);
+    }, [products]);
 
     const handleProductClick = (product) => {
         setSelectedProduct(product);
+        
     };
 
     if (error) {
@@ -34,8 +28,10 @@ const Product = ({ products }) => {
         <div style={{ marginTop: "-100px" }}>
             <h1 className='product-title'>Products</h1>
             <div className="product-grid">
-                {productsList.map(product => (
-                    <Box sx={{ margin: "0 10px 50px 10px", height: "300px", padding: "10px" }} key={product.id}>
+                {filteredProducts.map(product => (
+                    <Box sx={{ margin: "0 10px 50px 10px", height: "300px", padding: "10px" }} key={product.id}
+                    src='https://source.unsplash.com/random/800x600'
+                    fallback={<Shimmer width={800} height={600} />}>
                         <Paper>
                             <Link to={`/product/${product.id}`} className='product-link'>
                                 <div className="product-item" onClick={() => handleProductClick(product)}>
@@ -57,7 +53,7 @@ const Product = ({ products }) => {
                     </Box>
                 ))}
             </div>
-            
+
         </div>
     );
 }
